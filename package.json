@@ -28,6 +28,8 @@
     "@types/node": "^14",
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/parser": "^5",
+    "aws-cdk-lib": "2.54.0",
+    "constructs": "10.1.182",
     "eslint": "^8",
     "eslint-import-resolver-node": "^0.3.6",
     "eslint-import-resolver-typescript": "^3.5.2",
@@ -41,6 +43,10 @@
     "ts-jest": "^29.0.3",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.3"
+  },
+  "peerDependencies": {
+    "aws-cdk-lib": "^2.54.0",
+    "constructs": "^10.1.182"
   },
   "main": "lib/index.js",
   "license": "Apache-2.0",
