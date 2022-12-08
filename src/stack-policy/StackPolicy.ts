@@ -39,12 +39,14 @@ export class StackPolicy extends Construct {
         parameters: {
           StackName: props.protectedStack.stackName,
           StackPolicyBody: JSON.stringify({
-            Statement: {
-              Effect: 'Allow',
-              Action: 'Update:*',
-              Principal: '*',
-              Resource: '*',
-            },
+            Statement: [
+              {
+                Effect: 'Allow',
+                Action: 'Update:*',
+                Principal: '*',
+                Resource: '*',
+              },
+            ],
           }),
         },
         physicalResourceId: PhysicalResourceId.of(`policy-${props.protectedStack.stackName}`),
