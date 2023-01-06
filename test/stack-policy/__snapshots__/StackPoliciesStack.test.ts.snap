@@ -172,7 +172,7 @@ exports[`StackPoliciesStack generate the correct cloudformation 1`] = `
       ],
       "Properties": {
         "Create": "{"service":"CloudFormation","action":"setStackPolicy","parameters":{"StackName":"FirstProtectedStack","StackPolicyBody":"{\\"Statement\\":[{\\"Effect\\":\\"Allow\\",\\"Action\\":\\"Update:*\\",\\"Principal\\":\\"*\\",\\"Resource\\":\\"*\\"},{\\"Effect\\":\\"Deny\\",\\"Action\\":\\"Update:Delete\\",\\"Principal\\":\\"*\\",\\"Resource\\":\\"*\\"}]}"},"physicalResourceId":{"id":"policy-FirstProtectedStack"}}",
-        "Delete": "{"service":"CloudFormation","action":"setStackPolicy","parameters":{"StackName":"FirstProtectedStack","StackPolicyBody":"{\\"Statement\\":[{\\"Effect\\":\\"Allow\\",\\"Action\\":\\"Update:*\\",\\"Principal\\":\\"*\\",\\"Resource\\":\\"*\\"}]}"},"physicalResourceId":{"id":"policy-FirstProtectedStack"}}",
+        "Delete": "{"service":"CloudFormation","action":"setStackPolicy","parameters":{"StackName":"FirstProtectedStack","StackPolicyBody":"{\\n    \\"Statement\\": [\\n        {\\n            \\"Effect\\": \\"Allow\\",\\n            \\"Action\\": \\"Update:*\\",\\n            \\"Principal\\": \\"*\\",\\n            \\"Resource\\": \\"*\\"\\n        }\\n    ]\\n}"},"physicalResourceId":{"id":"policy-FirstProtectedStack"}}",
         "InstallLatestAwsSdk": true,
         "ServiceToken": {
           "Fn::GetAtt": [
@@ -215,7 +215,7 @@ exports[`StackPoliciesStack generate the correct cloudformation 1`] = `
       ],
       "Properties": {
         "Create": "{"service":"CloudFormation","action":"setStackPolicy","parameters":{"StackName":"SecondProtectedStack","StackPolicyBody":"{\\"Statement\\":[{\\"Effect\\":\\"Allow\\",\\"Action\\":\\"Update:*\\",\\"Principal\\":\\"*\\",\\"Resource\\":\\"*\\"},{\\"Effect\\":\\"Deny\\",\\"Action\\":\\"Update:Replace\\",\\"Principal\\":\\"*\\",\\"Resource\\":\\"*\\"}]}"},"physicalResourceId":{"id":"policy-SecondProtectedStack"}}",
-        "Delete": "{"service":"CloudFormation","action":"setStackPolicy","parameters":{"StackName":"SecondProtectedStack","StackPolicyBody":"{\\"Statement\\":[{\\"Effect\\":\\"Allow\\",\\"Action\\":\\"Update:*\\",\\"Principal\\":\\"*\\",\\"Resource\\":\\"*\\"}]}"},"physicalResourceId":{"id":"policy-SecondProtectedStack"}}",
+        "Delete": "{"service":"CloudFormation","action":"setStackPolicy","parameters":{"StackName":"SecondProtectedStack","StackPolicyBody":"{\\n    \\"Statement\\": [\\n        {\\n            \\"Effect\\": \\"Allow\\",\\n            \\"Action\\": \\"Update:*\\",\\n            \\"Principal\\": \\"*\\",\\n            \\"Resource\\": \\"*\\"\\n        }\\n    ]\\n}"},"physicalResourceId":{"id":"policy-SecondProtectedStack"}}",
         "InstallLatestAwsSdk": true,
         "ServiceToken": {
           "Fn::GetAtt": [

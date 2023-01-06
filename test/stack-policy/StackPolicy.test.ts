@@ -25,7 +25,7 @@ describe('StackPolicy', () => {
             Resource: '*',
           },
         ],
-      }),
+      }, undefined, 4),
     });
     const template = Template.fromStack(stack);
     expect(template.toJSON()).toMatchSnapshot();

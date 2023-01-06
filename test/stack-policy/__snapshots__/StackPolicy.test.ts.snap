@@ -194,8 +194,8 @@ exports[`StackPolicy generate the correct cloudformation 1`] = `
         "PolicyStackcustomresourceProtectedStackCustomResourcePolicyB647A220",
       ],
       "Properties": {
-        "Create": "{"service":"CloudFormation","action":"setStackPolicy","parameters":{"StackName":"ProtectedStack","StackPolicyBody":"{\\"Statement\\":[{\\"Effect\\":\\"Allow\\",\\"Action\\":\\"Update:*\\",\\"Principal\\":\\"*\\",\\"Resource\\":\\"*\\"},{\\"Effect\\":\\"Deny\\",\\"Action\\":\\"Update:Delete\\",\\"Principal\\":\\"*\\",\\"Resource\\":\\"*\\"}]}"},"physicalResourceId":{"id":"policy-ProtectedStack"}}",
-        "Delete": "{"service":"CloudFormation","action":"setStackPolicy","parameters":{"StackName":"ProtectedStack","StackPolicyBody":"{\\"Statement\\":[{\\"Effect\\":\\"Allow\\",\\"Action\\":\\"Update:*\\",\\"Principal\\":\\"*\\",\\"Resource\\":\\"*\\"}]}"},"physicalResourceId":{"id":"policy-ProtectedStack"}}",
+        "Create": "{"service":"CloudFormation","action":"setStackPolicy","parameters":{"StackName":"ProtectedStack","StackPolicyBody":"{\\n    \\"Statement\\": [\\n        {\\n            \\"Effect\\": \\"Allow\\",\\n            \\"Action\\": \\"Update:*\\",\\n            \\"Principal\\": \\"*\\",\\n            \\"Resource\\": \\"*\\"\\n        },\\n        {\\n            \\"Effect\\": \\"Deny\\",\\n            \\"Action\\": \\"Update:Delete\\",\\n            \\"Principal\\": \\"*\\",\\n            \\"Resource\\": \\"*\\"\\n        }\\n    ]\\n}"},"physicalResourceId":{"id":"policy-ProtectedStack"}}",
+        "Delete": "{"service":"CloudFormation","action":"setStackPolicy","parameters":{"StackName":"ProtectedStack","StackPolicyBody":"{\\n    \\"Statement\\": [\\n        {\\n            \\"Effect\\": \\"Allow\\",\\n            \\"Action\\": \\"Update:*\\",\\n            \\"Principal\\": \\"*\\",\\n            \\"Resource\\": \\"*\\"\\n        }\\n    ]\\n}"},"physicalResourceId":{"id":"policy-ProtectedStack"}}",
         "InstallLatestAwsSdk": true,
         "ServiceToken": {
           "Fn::GetAtt": [
@@ -203,7 +203,7 @@ exports[`StackPolicy generate the correct cloudformation 1`] = `
             "Arn",
           ],
         },
-        "Update": "{"service":"CloudFormation","action":"setStackPolicy","parameters":{"StackName":"ProtectedStack","StackPolicyBody":"{\\"Statement\\":[{\\"Effect\\":\\"Allow\\",\\"Action\\":\\"Update:*\\",\\"Principal\\":\\"*\\",\\"Resource\\":\\"*\\"},{\\"Effect\\":\\"Deny\\",\\"Action\\":\\"Update:Delete\\",\\"Principal\\":\\"*\\",\\"Resource\\":\\"*\\"}]}"},"physicalResourceId":{"id":"policy-ProtectedStack"}}",
+        "Update": "{"service":"CloudFormation","action":"setStackPolicy","parameters":{"StackName":"ProtectedStack","StackPolicyBody":"{\\n    \\"Statement\\": [\\n        {\\n            \\"Effect\\": \\"Allow\\",\\n            \\"Action\\": \\"Update:*\\",\\n            \\"Principal\\": \\"*\\",\\n            \\"Resource\\": \\"*\\"\\n        },\\n        {\\n            \\"Effect\\": \\"Deny\\",\\n            \\"Action\\": \\"Update:Delete\\",\\n            \\"Principal\\": \\"*\\",\\n            \\"Resource\\": \\"*\\"\\n        }\\n    ]\\n}"},"physicalResourceId":{"id":"policy-ProtectedStack"}}",
       },
       "Type": "Custom::AWS",
       "UpdateReplacePolicy": "Delete",
