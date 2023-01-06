@@ -1,0 +1,283 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StackPoliciesStack generate the correct cloudformation 1`] = `
+{
+  "Parameters": {
+    "BootstrapVersion": {
+      "Default": "/cdk-bootstrap/hnb659fds/version",
+      "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]",
+      "Type": "AWS::SSM::Parameter::Value<String>",
+    },
+  },
+  "Resources": {
+    "AWS679f53fac002430cb0da5b7982bd22872D164C4C": {
+      "DependsOn": [
+        "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2",
+      ],
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
+          },
+          "S3Key": "e845402ce43b66fc6f20df4a239f20f8662eb6c7f920b94cf6542dd0e64ce0f7.zip",
+        },
+        "Handler": "index.handler",
+        "Role": {
+          "Fn::GetAtt": [
+            "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2",
+            "Arn",
+          ],
+        },
+        "Runtime": "nodejs14.x",
+        "Timeout": 120,
+      },
+      "Type": "AWS::Lambda::Function",
+    },
+    "AWS679f53fac002430cb0da5b7982bd2287LogRetentionCE72797A": {
+      "Properties": {
+        "LogGroupName": {
+          "Fn::Join": [
+            "",
+            [
+              "/aws/lambda/",
+              {
+                "Ref": "AWS679f53fac002430cb0da5b7982bd22872D164C4C",
+              },
+            ],
+          ],
+        },
+        "RetentionInDays": 7,
+        "ServiceToken": {
+          "Fn::GetAtt": [
+            "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A",
+            "Arn",
+          ],
+        },
+      },
+      "Type": "Custom::LogRetention",
+    },
+    "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2": {
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+              ],
+            ],
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A": {
+      "DependsOn": [
+        "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB",
+        "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB",
+      ],
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
+          },
+          "S3Key": "eb5b005c858404ea0c8f68098ed5dcdf5340e02461f149751d10f59c210d5ef8.zip",
+        },
+        "Handler": "index.handler",
+        "Role": {
+          "Fn::GetAtt": [
+            "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB",
+            "Arn",
+          ],
+        },
+        "Runtime": "nodejs14.x",
+      },
+      "Type": "AWS::Lambda::Function",
+    },
+    "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB": {
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+              ],
+            ],
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB": {
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
+                "logs:PutRetentionPolicy",
+                "logs:DeleteRetentionPolicy",
+              ],
+              "Effect": "Allow",
+              "Resource": "*",
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "PolicyName": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB",
+        "Roles": [
+          {
+            "Ref": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Policy",
+    },
+    "policyFirstProtectedStackcustomresourceFirstProtectedStack7A5A165F": {
+      "DeletionPolicy": "Delete",
+      "DependsOn": [
+        "policyFirstProtectedStackcustomresourceFirstProtectedStackCustomResourcePolicy77846930",
+      ],
+      "Properties": {
+        "Create": "{"service":"CloudFormation","action":"setStackPolicy","parameters":{"StackName":"FirstProtectedStack","StackPolicyBody":"{\\"Statement\\":[{\\"Effect\\":\\"Allow\\",\\"Action\\":\\"Update:*\\",\\"Principal\\":\\"*\\",\\"Resource\\":\\"*\\"},{\\"Effect\\":\\"Deny\\",\\"Action\\":\\"Update:Delete\\",\\"Principal\\":\\"*\\",\\"Resource\\":\\"*\\"}]}"},"physicalResourceId":{"id":"policy-FirstProtectedStack"}}",
+        "Delete": "{"service":"CloudFormation","action":"setStackPolicy","parameters":{"StackName":"FirstProtectedStack","StackPolicyBody":"{\\"Statement\\":[{\\"Effect\\":\\"Allow\\",\\"Action\\":\\"Update:*\\",\\"Principal\\":\\"*\\",\\"Resource\\":\\"*\\"}]}"},"physicalResourceId":{"id":"policy-FirstProtectedStack"}}",
+        "InstallLatestAwsSdk": true,
+        "ServiceToken": {
+          "Fn::GetAtt": [
+            "AWS679f53fac002430cb0da5b7982bd22872D164C4C",
+            "Arn",
+          ],
+        },
+        "Update": "{"service":"CloudFormation","action":"setStackPolicy","parameters":{"StackName":"FirstProtectedStack","StackPolicyBody":"{\\"Statement\\":[{\\"Effect\\":\\"Allow\\",\\"Action\\":\\"Update:*\\",\\"Principal\\":\\"*\\",\\"Resource\\":\\"*\\"},{\\"Effect\\":\\"Deny\\",\\"Action\\":\\"Update:Delete\\",\\"Principal\\":\\"*\\",\\"Resource\\":\\"*\\"}]}"},"physicalResourceId":{"id":"policy-FirstProtectedStack"}}",
+      },
+      "Type": "Custom::AWS",
+      "UpdateReplacePolicy": "Delete",
+    },
+    "policyFirstProtectedStackcustomresourceFirstProtectedStackCustomResourcePolicy77846930": {
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": "cloudformation:SetStackPolicy",
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::ImportValue": "FirstProtectedStack:ExportsOutputRefAWSStackIdB2DD5BAA",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "PolicyName": "policyFirstProtectedStackcustomresourceFirstProtectedStackCustomResourcePolicy77846930",
+        "Roles": [
+          {
+            "Ref": "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Policy",
+    },
+    "policySecondProtectedStackcustomresourceSecondProtectedStackC58E745D": {
+      "DeletionPolicy": "Delete",
+      "DependsOn": [
+        "policySecondProtectedStackcustomresourceSecondProtectedStackCustomResourcePolicy5739F31B",
+      ],
+      "Properties": {
+        "Create": "{"service":"CloudFormation","action":"setStackPolicy","parameters":{"StackName":"SecondProtectedStack","StackPolicyBody":"{\\"Statement\\":[{\\"Effect\\":\\"Allow\\",\\"Action\\":\\"Update:*\\",\\"Principal\\":\\"*\\",\\"Resource\\":\\"*\\"},{\\"Effect\\":\\"Deny\\",\\"Action\\":\\"Update:Replace\\",\\"Principal\\":\\"*\\",\\"Resource\\":\\"*\\"}]}"},"physicalResourceId":{"id":"policy-SecondProtectedStack"}}",
+        "Delete": "{"service":"CloudFormation","action":"setStackPolicy","parameters":{"StackName":"SecondProtectedStack","StackPolicyBody":"{\\"Statement\\":[{\\"Effect\\":\\"Allow\\",\\"Action\\":\\"Update:*\\",\\"Principal\\":\\"*\\",\\"Resource\\":\\"*\\"}]}"},"physicalResourceId":{"id":"policy-SecondProtectedStack"}}",
+        "InstallLatestAwsSdk": true,
+        "ServiceToken": {
+          "Fn::GetAtt": [
+            "AWS679f53fac002430cb0da5b7982bd22872D164C4C",
+            "Arn",
+          ],
+        },
+        "Update": "{"service":"CloudFormation","action":"setStackPolicy","parameters":{"StackName":"SecondProtectedStack","StackPolicyBody":"{\\"Statement\\":[{\\"Effect\\":\\"Allow\\",\\"Action\\":\\"Update:*\\",\\"Principal\\":\\"*\\",\\"Resource\\":\\"*\\"},{\\"Effect\\":\\"Deny\\",\\"Action\\":\\"Update:Replace\\",\\"Principal\\":\\"*\\",\\"Resource\\":\\"*\\"}]}"},"physicalResourceId":{"id":"policy-SecondProtectedStack"}}",
+      },
+      "Type": "Custom::AWS",
+      "UpdateReplacePolicy": "Delete",
+    },
+    "policySecondProtectedStackcustomresourceSecondProtectedStackCustomResourcePolicy5739F31B": {
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": "cloudformation:SetStackPolicy",
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::ImportValue": "SecondProtectedStack:ExportsOutputRefAWSStackIdB2DD5BAA",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "PolicyName": "policySecondProtectedStackcustomresourceSecondProtectedStackCustomResourcePolicy5739F31B",
+        "Roles": [
+          {
+            "Ref": "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Policy",
+    },
+  },
+  "Rules": {
+    "CheckBootstrapVersion": {
+      "Assertions": [
+        {
+          "Assert": {
+            "Fn::Not": [
+              {
+                "Fn::Contains": [
+                  [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                  ],
+                  {
+                    "Ref": "BootstrapVersion",
+                  },
+                ],
+              },
+            ],
+          },
+          "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI.",
+        },
+      ],
+    },
+  },
+}
+`;
