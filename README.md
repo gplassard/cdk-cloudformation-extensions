@@ -2,6 +2,8 @@
 
 Based on https://github.com/aws/aws-cdk-rfcs/issues/72#issuecomment-641072125
 
+Documentation : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html
+
 ## Installation
 
 ```bash

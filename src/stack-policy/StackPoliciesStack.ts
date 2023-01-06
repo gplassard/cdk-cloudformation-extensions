@@ -4,7 +4,7 @@ import { StackPolicy } from './StackPolicy';
 
 export interface StackPolicyAssignment {
   readonly stack: Stack;
-  readonly policy: Record<string, string>;
+  readonly policy: { Statement: Record<string, any>[] };
 }
 
 export interface StackPoliciesProps extends StackProps {
