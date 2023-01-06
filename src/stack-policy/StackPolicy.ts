@@ -47,7 +47,7 @@ export class StackPolicy extends Construct {
                 Resource: '*',
               },
             ],
-          }),
+          }, undefined, 4),
         },
         physicalResourceId: PhysicalResourceId.of(`policy-${props.protectedStack.stackName}`),
       },
