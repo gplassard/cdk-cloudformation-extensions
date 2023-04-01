@@ -23,29 +23,29 @@
     "projen": "npx projen"
   },
   "devDependencies": {
-    "@gplassard/projen-extensions": "^0.0.34",
-    "@types/jest": "^29.4.0",
+    "@gplassard/projen-extensions": "^0.0.35",
+    "@types/jest": "^29.5.0",
     "@types/node": "^14",
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/parser": "^5",
-    "aws-cdk-lib": "2.66.1",
-    "constructs": "10.1.264",
+    "aws-cdk-lib": "2.72.1",
+    "constructs": "10.1.298",
     "eslint": "^8",
     "eslint-import-resolver-node": "^0.3.7",
-    "eslint-import-resolver-typescript": "^3.5.3",
+    "eslint-import-resolver-typescript": "^3.5.4",
     "eslint-plugin-import": "^2.27.5",
-    "jest": "^29.4.3",
+    "jest": "^29.5.0",
     "jest-junit": "^13",
     "npm-check-updates": "^16",
-    "projen": "^0.67.69",
+    "projen": "^0.70.5",
     "standard-version": "^9",
     "ts-jest": "^29.0.5",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.5"
   },
   "peerDependencies": {
-    "aws-cdk-lib": "^2.66.1",
-    "constructs": "^10.1.264"
+    "aws-cdk-lib": "^2.72.1",
+    "constructs": "^10.1.298"
   },
   "main": "lib/index.js",
   "license": "Apache-2.0",
