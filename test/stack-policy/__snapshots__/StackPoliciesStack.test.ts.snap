@@ -19,7 +19,7 @@ exports[`StackPoliciesStack generate the correct cloudformation 1`] = `
           "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "bb459fac5f6b4b052aac9803443226d161a5cfe96f4648b21f9e4912c698bf30.zip",
+          "S3Key": "a9d3d4d1afa000946b9863b3e7578a5a5ad86d88274b3639938aa2baebf822ce.zip",
         },
         "Handler": "index.handler",
         "Role": {
@@ -97,7 +97,7 @@ exports[`StackPoliciesStack generate the correct cloudformation 1`] = `
           "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "5fa1330271b8967d9254ba2d4a07144f8acefe8b77e6d6bba38261373a50d5f8.zip",
+          "S3Key": "f5b6a6d08a8206e67d0b54e2a29abd7e0472d835abc71037de3a93545b5edacc.zip",
         },
         "Handler": "index.handler",
         "Role": {
