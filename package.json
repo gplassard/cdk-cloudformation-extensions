@@ -23,7 +23,7 @@
     "projen": "npx projen"
   },
   "devDependencies": {
-    "@gplassard/projen-extensions": "^0.0.42",
+    "@gplassard/projen-extensions": "^0.0.48",
     "@types/jest": "^29.5.1",
     "@types/node": "^16",
     "@typescript-eslint/eslint-plugin": "^5",
