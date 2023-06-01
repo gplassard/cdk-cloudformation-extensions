@@ -24,12 +24,12 @@
   },
   "devDependencies": {
     "@gplassard/projen-extensions": "^0.0.48",
-    "@types/jest": "^29.5.1",
+    "@types/jest": "^29.5.2",
     "@types/node": "^16",
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/parser": "^5",
-    "aws-cdk-lib": "2.77.0",
-    "constructs": "10.2.12",
+    "aws-cdk-lib": "2.81.0",
+    "constructs": "10.2.39",
     "eslint": "^8",
     "eslint-import-resolver-node": "^0.3.7",
     "eslint-import-resolver-typescript": "^3.5.5",
@@ -43,8 +43,8 @@
     "typescript": "^4.9.5"
   },
   "peerDependencies": {
-    "aws-cdk-lib": "^2.77.0",
-    "constructs": "^10.2.12"
+    "aws-cdk-lib": "^2.81.0",
+    "constructs": "^10.2.39"
   },
   "main": "lib/index.js",
   "license": "Apache-2.0",
