@@ -1,13 +1,14 @@
-import { Stack, StackProps } from 'aws-cdk-lib';
+import { Stack } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import { StackPolicy } from './StackPolicy';
+import { BaseStack, BaseStackProps } from '../cloudformation/BaseStack';
 
 export interface StackPolicyAssignment {
-  readonly stack: Stack;
+  readonly stack: BaseStack;
   readonly policy: { Statement: Record<string, any>[] };
 }
 
-export interface StackPoliciesProps extends StackProps {
+export interface StackPoliciesProps extends BaseStackProps {
   readonly stackPoliciesAssignment: StackPolicyAssignment[];
 }
 
