@@ -1,7 +1,7 @@
 import { Stack } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import { StackPolicy } from './StackPolicy';
-import {BaseStack, BaseStackProps} from "../cloudformation/BaseStack";
+import { BaseStack, BaseStackProps } from '../cloudformation/BaseStack';
 
 export interface StackPolicyAssignment {
   readonly stack: BaseStack;
