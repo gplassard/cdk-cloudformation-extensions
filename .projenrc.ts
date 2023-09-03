@@ -7,5 +7,6 @@ const project = new TypescriptLibraryProject({
   packageName: '@gplassard/cdk-cloudformation-extensions',
   devDeps: ['aws-cdk-lib', 'constructs'],
   peerDeps: ['aws-cdk-lib', 'constructs'],
+  releaseRank: 2,
 });
 project.synth();
