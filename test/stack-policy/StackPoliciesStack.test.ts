@@ -1,14 +1,23 @@
-import { App, Stack } from 'aws-cdk-lib';
+import { App } from 'aws-cdk-lib';
 import { Template } from 'aws-cdk-lib/assertions';
-import { StackPoliciesStack } from '../../src';
+import { StackPoliciesStack, BaseStack } from '../../src';
+import { testTags } from '../tags/Tags';
 
 describe('StackPoliciesStack', () => {
   const app = new App();
-  const firstProtectedStack = new Stack(app, 'FirstProtectedStack');
-  const secondProtectedStack = new Stack(app, 'SecondProtectedStack');
+  const firstProtectedStack = new BaseStack(app, 'FirstProtectedStack', {
+    stackName: 'first-stack',
+    tags: testTags(),
+  });
+  const secondProtectedStack = new BaseStack(app, 'SecondProtectedStack', {
+    stackName: 'second-stack',
+    tags: testTags(),
+  });
 
   it('generate the correct cloudformation', () => {
     const policiesStack = new StackPoliciesStack(app, 'PolicyStack', {
+      stackName: 'policy-stack',
+      tags: testTags(),
       stackPoliciesAssignment: [
         {
           stack: firstProtectedStack,
