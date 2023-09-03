@@ -23,11 +23,11 @@
     "projen": "npx projen"
   },
   "devDependencies": {
-    "@gplassard/projen-extensions": "^0.0.51",
+    "@gplassard/projen-extensions": "^0.0.53",
     "@types/jest": "^29.5.4",
     "@types/node": "^16",
-    "@typescript-eslint/eslint-plugin": "^5",
-    "@typescript-eslint/parser": "^5",
+    "@typescript-eslint/eslint-plugin": "^6",
+    "@typescript-eslint/parser": "^6",
     "aws-cdk-lib": "2.93.0",
     "constructs": "10.2.70",
     "eslint": "^8",

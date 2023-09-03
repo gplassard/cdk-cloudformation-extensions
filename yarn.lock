@@ -366,12 +366,12 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.48.0.tgz#642633964e217905436033a2bd08bf322849b7fb"
   integrity sha512-ZSjtmelB7IJfWD2Fvb7+Z+ChTIKWq6kjda95fLcQKNS5aheVHn4IkfgRQE3sIIzTcSLwLcLZUD9UBt+V7+h+Pw==
 
-"@gplassard/projen-extensions@^0.0.51":
-  version "0.0.51"
-  resolved "https://npm.pkg.github.com/download/@gplassard/projen-extensions/0.0.51/5cfbff165fb8f30c97b419ce4ae6010d2e18176f#5cfbff165fb8f30c97b419ce4ae6010d2e18176f"
-  integrity sha512-ivpJWiM1xQKEulRK9bRCddhU39GDUrsH4axYp/tqrAW8utY19Q1bEFNIpUGWkYxSBwq7Z6p2149LE0C8zXS/bg==
+"@gplassard/projen-extensions@^0.0.53":
+  version "0.0.53"
+  resolved "https://npm.pkg.github.com/download/@gplassard/projen-extensions/0.0.53/4ed614358a1ea398c5ffc1e9be58adde5deaed59#4ed614358a1ea398c5ffc1e9be58adde5deaed59"
+  integrity sha512-ULUORBZvp1H98C7+Nb/6P4xF5HkJIYw63nhIDAp5oHPNmza57jUCJ52Rs0QIBkZ8BhOLaUTeh5w5+XsYV7tzMg==
   dependencies:
-    projen "^0.71.158"
+    projen "^0.73.3"
 
 "@humanwhocodes/config-array@^0.11.10":
   version "0.11.11"
@@ -4785,10 +4785,10 @@ progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.71.158:
-  version "0.71.163"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.71.163.tgz#8522901b1b6f791567050fa43bc7248a86f0699d"
-  integrity sha512-Sj0UthyhhvHYAhgvuQtQk6R4ia/AkHGT/JG3PFbEjIIYcPSImonW+1OIrZ+S+ofWZJPWZj07RBYLiZ+qAVm8NQ==
+projen@^0.73.3:
+  version "0.73.6"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.73.6.tgz#665e661138c7e3c863fe59c17c0f60c301d563ae"
+  integrity sha512-ZXQ5KVuMGQY8iBhA93GKhnP2TMOjZPjSdeHdwolFajQkJtcKKGTBD7dF1yNRnb0aS12oEu78EZVPNFG+vW9C/w==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
