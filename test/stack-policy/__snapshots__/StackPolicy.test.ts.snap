@@ -19,7 +19,7 @@ exports[`StackPolicy generate the correct cloudformation 1`] = `
           "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "ed6cd104ff5f101d06dae8cb2b87cc6e6d69b9a22055b467ea6cae10ff023023.zip",
+          "S3Key": "97f30e67419a1676a2215492723e5add1aa491caf0cbe2dd878fc4fab0468cd4.zip",
         },
         "Handler": "index.handler",
         "Role": {
@@ -195,8 +195,8 @@ exports[`StackPolicy generate the correct cloudformation 1`] = `
         "PolicyStackcustomresourceProtectedStackCustomResourcePolicyB647A220",
       ],
       "Properties": {
-        "Create": "{"service":"CloudFormation","action":"setStackPolicy","parameters":{"StackName":"ProtectedStack","StackPolicyBody":"{\\n    \\"Statement\\": [\\n        {\\n            \\"Effect\\": \\"Allow\\",\\n            \\"Action\\": \\"Update:*\\",\\n            \\"Principal\\": \\"*\\",\\n            \\"Resource\\": \\"*\\"\\n        },\\n        {\\n            \\"Effect\\": \\"Deny\\",\\n            \\"Action\\": \\"Update:Delete\\",\\n            \\"Principal\\": \\"*\\",\\n            \\"Resource\\": \\"*\\"\\n        }\\n    ]\\n}"},"physicalResourceId":{"id":"policy-ProtectedStack"}}",
-        "Delete": "{"service":"CloudFormation","action":"setStackPolicy","parameters":{"StackName":"ProtectedStack","StackPolicyBody":"{\\n    \\"Statement\\": [\\n        {\\n            \\"Effect\\": \\"Allow\\",\\n            \\"Action\\": \\"Update:*\\",\\n            \\"Principal\\": \\"*\\",\\n            \\"Resource\\": \\"*\\"\\n        }\\n    ]\\n}"},"physicalResourceId":{"id":"policy-ProtectedStack"}}",
+        "Create": "{"service":"CloudFormation","action":"setStackPolicy","parameters":{"StackName":"ProtectedStack","StackPolicyBody":"{\\n    \\"Statement\\": [\\n        {\\n            \\"Effect\\": \\"Allow\\",\\n            \\"Action\\": \\"Update:*\\",\\n            \\"Principal\\": \\"*\\",\\n            \\"Resource\\": \\"*\\"\\n        },\\n        {\\n            \\"Effect\\": \\"Deny\\",\\n            \\"Action\\": \\"Update:Delete\\",\\n            \\"Principal\\": \\"*\\",\\n            \\"Resource\\": \\"*\\"\\n        }\\n    ]\\n}"},"physicalResourceId":{"id":"policy-ProtectedStack"},"logApiResponseData":true}",
+        "Delete": "{"service":"CloudFormation","action":"setStackPolicy","parameters":{"StackName":"ProtectedStack","StackPolicyBody":"{\\n    \\"Statement\\": [\\n        {\\n            \\"Effect\\": \\"Allow\\",\\n            \\"Action\\": \\"Update:*\\",\\n            \\"Principal\\": \\"*\\",\\n            \\"Resource\\": \\"*\\"\\n        }\\n    ]\\n}"},"physicalResourceId":{"id":"policy-ProtectedStack"},"logApiResponseData":true}",
         "InstallLatestAwsSdk": true,
         "ServiceToken": {
           "Fn::GetAtt": [
@@ -204,7 +204,7 @@ exports[`StackPolicy generate the correct cloudformation 1`] = `
             "Arn",
           ],
         },
-        "Update": "{"service":"CloudFormation","action":"setStackPolicy","parameters":{"StackName":"ProtectedStack","StackPolicyBody":"{\\n    \\"Statement\\": [\\n        {\\n            \\"Effect\\": \\"Allow\\",\\n            \\"Action\\": \\"Update:*\\",\\n            \\"Principal\\": \\"*\\",\\n            \\"Resource\\": \\"*\\"\\n        },\\n        {\\n            \\"Effect\\": \\"Deny\\",\\n            \\"Action\\": \\"Update:Delete\\",\\n            \\"Principal\\": \\"*\\",\\n            \\"Resource\\": \\"*\\"\\n        }\\n    ]\\n}"},"physicalResourceId":{"id":"policy-ProtectedStack"}}",
+        "Update": "{"service":"CloudFormation","action":"setStackPolicy","parameters":{"StackName":"ProtectedStack","StackPolicyBody":"{\\n    \\"Statement\\": [\\n        {\\n            \\"Effect\\": \\"Allow\\",\\n            \\"Action\\": \\"Update:*\\",\\n            \\"Principal\\": \\"*\\",\\n            \\"Resource\\": \\"*\\"\\n        },\\n        {\\n            \\"Effect\\": \\"Deny\\",\\n            \\"Action\\": \\"Update:Delete\\",\\n            \\"Principal\\": \\"*\\",\\n            \\"Resource\\": \\"*\\"\\n        }\\n    ]\\n}"},"physicalResourceId":{"id":"policy-ProtectedStack"},"logApiResponseData":true}",
       },
       "Type": "Custom::AWS",
       "UpdateReplacePolicy": "Delete",
