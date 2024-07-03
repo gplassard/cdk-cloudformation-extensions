@@ -2,6 +2,115 @@
 
 exports[`StackPoliciesStack generate the correct cloudformation 1`] = `
 {
+  "Mappings": {
+    "LatestNodeRuntimeMap": {
+      "af-south-1": {
+        "value": "nodejs20.x",
+      },
+      "ap-east-1": {
+        "value": "nodejs20.x",
+      },
+      "ap-northeast-1": {
+        "value": "nodejs20.x",
+      },
+      "ap-northeast-2": {
+        "value": "nodejs20.x",
+      },
+      "ap-northeast-3": {
+        "value": "nodejs20.x",
+      },
+      "ap-south-1": {
+        "value": "nodejs20.x",
+      },
+      "ap-south-2": {
+        "value": "nodejs20.x",
+      },
+      "ap-southeast-1": {
+        "value": "nodejs20.x",
+      },
+      "ap-southeast-2": {
+        "value": "nodejs20.x",
+      },
+      "ap-southeast-3": {
+        "value": "nodejs20.x",
+      },
+      "ap-southeast-4": {
+        "value": "nodejs20.x",
+      },
+      "ca-central-1": {
+        "value": "nodejs20.x",
+      },
+      "cn-north-1": {
+        "value": "nodejs18.x",
+      },
+      "cn-northwest-1": {
+        "value": "nodejs18.x",
+      },
+      "eu-central-1": {
+        "value": "nodejs20.x",
+      },
+      "eu-central-2": {
+        "value": "nodejs20.x",
+      },
+      "eu-north-1": {
+        "value": "nodejs20.x",
+      },
+      "eu-south-1": {
+        "value": "nodejs20.x",
+      },
+      "eu-south-2": {
+        "value": "nodejs20.x",
+      },
+      "eu-west-1": {
+        "value": "nodejs20.x",
+      },
+      "eu-west-2": {
+        "value": "nodejs20.x",
+      },
+      "eu-west-3": {
+        "value": "nodejs20.x",
+      },
+      "il-central-1": {
+        "value": "nodejs20.x",
+      },
+      "me-central-1": {
+        "value": "nodejs20.x",
+      },
+      "me-south-1": {
+        "value": "nodejs20.x",
+      },
+      "sa-east-1": {
+        "value": "nodejs20.x",
+      },
+      "us-east-1": {
+        "value": "nodejs20.x",
+      },
+      "us-east-2": {
+        "value": "nodejs20.x",
+      },
+      "us-gov-east-1": {
+        "value": "nodejs18.x",
+      },
+      "us-gov-west-1": {
+        "value": "nodejs18.x",
+      },
+      "us-iso-east-1": {
+        "value": "nodejs18.x",
+      },
+      "us-iso-west-1": {
+        "value": "nodejs18.x",
+      },
+      "us-isob-east-1": {
+        "value": "nodejs18.x",
+      },
+      "us-west-1": {
+        "value": "nodejs20.x",
+      },
+      "us-west-2": {
+        "value": "nodejs20.x",
+      },
+    },
+  },
   "Parameters": {
     "BootstrapVersion": {
       "Default": "/cdk-bootstrap/hnb659fds/version",
@@ -28,7 +137,15 @@ exports[`StackPoliciesStack generate the correct cloudformation 1`] = `
             "Arn",
           ],
         },
-        "Runtime": "nodejs18.x",
+        "Runtime": {
+          "Fn::FindInMap": [
+            "LatestNodeRuntimeMap",
+            {
+              "Ref": "AWS::Region",
+            },
+            "value",
+          ],
+        },
         "Timeout": 120,
       },
       "Type": "AWS::Lambda::Function",
@@ -106,7 +223,15 @@ exports[`StackPoliciesStack generate the correct cloudformation 1`] = `
             "Arn",
           ],
         },
-        "Runtime": "nodejs18.x",
+        "Runtime": {
+          "Fn::FindInMap": [
+            "LatestNodeRuntimeMap",
+            {
+              "Ref": "AWS::Region",
+            },
+            "value",
+          ],
+        },
         "Timeout": 900,
       },
       "Type": "AWS::Lambda::Function",
@@ -172,8 +297,8 @@ exports[`StackPoliciesStack generate the correct cloudformation 1`] = `
         "policyfirststackcustomresourcefirststackCustomResourcePolicy208104DE",
       ],
       "Properties": {
-        "Create": "{"service":"CloudFormation","action":"setStackPolicy","parameters":{"StackName":"first-stack","StackPolicyBody":"{\\"Statement\\":[{\\"Effect\\":\\"Allow\\",\\"Action\\":\\"Update:*\\",\\"Principal\\":\\"*\\",\\"Resource\\":\\"*\\"},{\\"Effect\\":\\"Deny\\",\\"Action\\":\\"Update:Delete\\",\\"Principal\\":\\"*\\",\\"Resource\\":\\"*\\"}]}"},"physicalResourceId":{"id":"policy-first-stack"},"logApiResponseData":true}",
-        "Delete": "{"service":"CloudFormation","action":"setStackPolicy","parameters":{"StackName":"first-stack","StackPolicyBody":"{\\n    \\"Statement\\": [\\n        {\\n            \\"Effect\\": \\"Allow\\",\\n            \\"Action\\": \\"Update:*\\",\\n            \\"Principal\\": \\"*\\",\\n            \\"Resource\\": \\"*\\"\\n        }\\n    ]\\n}"},"physicalResourceId":{"id":"policy-first-stack"},"logApiResponseData":true}",
+        "Create": "{"service":"CloudFormation","action":"setStackPolicy","parameters":{"StackName":"first-stack","StackPolicyBody":"{\\"Statement\\":[{\\"Effect\\":\\"Allow\\",\\"Action\\":\\"Update:*\\",\\"Principal\\":\\"*\\",\\"Resource\\":\\"*\\"},{\\"Effect\\":\\"Deny\\",\\"Action\\":\\"Update:Delete\\",\\"Principal\\":\\"*\\",\\"Resource\\":\\"*\\"}]}"},"physicalResourceId":{"id":"policy-first-stack"}}",
+        "Delete": "{"service":"CloudFormation","action":"setStackPolicy","parameters":{"StackName":"first-stack","StackPolicyBody":"{\\n    \\"Statement\\": [\\n        {\\n            \\"Effect\\": \\"Allow\\",\\n            \\"Action\\": \\"Update:*\\",\\n            \\"Principal\\": \\"*\\",\\n            \\"Resource\\": \\"*\\"\\n        }\\n    ]\\n}"},"physicalResourceId":{"id":"policy-first-stack"}}",
         "InstallLatestAwsSdk": true,
         "ServiceToken": {
           "Fn::GetAtt": [
@@ -181,7 +306,7 @@ exports[`StackPoliciesStack generate the correct cloudformation 1`] = `
             "Arn",
           ],
         },
-        "Update": "{"service":"CloudFormation","action":"setStackPolicy","parameters":{"StackName":"first-stack","StackPolicyBody":"{\\"Statement\\":[{\\"Effect\\":\\"Allow\\",\\"Action\\":\\"Update:*\\",\\"Principal\\":\\"*\\",\\"Resource\\":\\"*\\"},{\\"Effect\\":\\"Deny\\",\\"Action\\":\\"Update:Delete\\",\\"Principal\\":\\"*\\",\\"Resource\\":\\"*\\"}]}"},"physicalResourceId":{"id":"policy-first-stack"},"logApiResponseData":true}",
+        "Update": "{"service":"CloudFormation","action":"setStackPolicy","parameters":{"StackName":"first-stack","StackPolicyBody":"{\\"Statement\\":[{\\"Effect\\":\\"Allow\\",\\"Action\\":\\"Update:*\\",\\"Principal\\":\\"*\\",\\"Resource\\":\\"*\\"},{\\"Effect\\":\\"Deny\\",\\"Action\\":\\"Update:Delete\\",\\"Principal\\":\\"*\\",\\"Resource\\":\\"*\\"}]}"},"physicalResourceId":{"id":"policy-first-stack"}}",
       },
       "Type": "Custom::AWS",
       "UpdateReplacePolicy": "Delete",
@@ -215,8 +340,8 @@ exports[`StackPoliciesStack generate the correct cloudformation 1`] = `
         "policysecondstackcustomresourcesecondstackCustomResourcePolicy9A7AC79D",
       ],
       "Properties": {
-        "Create": "{"service":"CloudFormation","action":"setStackPolicy","parameters":{"StackName":"second-stack","StackPolicyBody":"{\\"Statement\\":[{\\"Effect\\":\\"Allow\\",\\"Action\\":\\"Update:*\\",\\"Principal\\":\\"*\\",\\"Resource\\":\\"*\\"},{\\"Effect\\":\\"Deny\\",\\"Action\\":\\"Update:Replace\\",\\"Principal\\":\\"*\\",\\"Resource\\":\\"*\\"}]}"},"physicalResourceId":{"id":"policy-second-stack"},"logApiResponseData":true}",
-        "Delete": "{"service":"CloudFormation","action":"setStackPolicy","parameters":{"StackName":"second-stack","StackPolicyBody":"{\\n    \\"Statement\\": [\\n        {\\n            \\"Effect\\": \\"Allow\\",\\n            \\"Action\\": \\"Update:*\\",\\n            \\"Principal\\": \\"*\\",\\n            \\"Resource\\": \\"*\\"\\n        }\\n    ]\\n}"},"physicalResourceId":{"id":"policy-second-stack"},"logApiResponseData":true}",
+        "Create": "{"service":"CloudFormation","action":"setStackPolicy","parameters":{"StackName":"second-stack","StackPolicyBody":"{\\"Statement\\":[{\\"Effect\\":\\"Allow\\",\\"Action\\":\\"Update:*\\",\\"Principal\\":\\"*\\",\\"Resource\\":\\"*\\"},{\\"Effect\\":\\"Deny\\",\\"Action\\":\\"Update:Replace\\",\\"Principal\\":\\"*\\",\\"Resource\\":\\"*\\"}]}"},"physicalResourceId":{"id":"policy-second-stack"}}",
+        "Delete": "{"service":"CloudFormation","action":"setStackPolicy","parameters":{"StackName":"second-stack","StackPolicyBody":"{\\n    \\"Statement\\": [\\n        {\\n            \\"Effect\\": \\"Allow\\",\\n            \\"Action\\": \\"Update:*\\",\\n            \\"Principal\\": \\"*\\",\\n            \\"Resource\\": \\"*\\"\\n        }\\n    ]\\n}"},"physicalResourceId":{"id":"policy-second-stack"}}",
         "InstallLatestAwsSdk": true,
         "ServiceToken": {
           "Fn::GetAtt": [
@@ -224,7 +349,7 @@ exports[`StackPoliciesStack generate the correct cloudformation 1`] = `
             "Arn",
           ],
         },
-        "Update": "{"service":"CloudFormation","action":"setStackPolicy","parameters":{"StackName":"second-stack","StackPolicyBody":"{\\"Statement\\":[{\\"Effect\\":\\"Allow\\",\\"Action\\":\\"Update:*\\",\\"Principal\\":\\"*\\",\\"Resource\\":\\"*\\"},{\\"Effect\\":\\"Deny\\",\\"Action\\":\\"Update:Replace\\",\\"Principal\\":\\"*\\",\\"Resource\\":\\"*\\"}]}"},"physicalResourceId":{"id":"policy-second-stack"},"logApiResponseData":true}",
+        "Update": "{"service":"CloudFormation","action":"setStackPolicy","parameters":{"StackName":"second-stack","StackPolicyBody":"{\\"Statement\\":[{\\"Effect\\":\\"Allow\\",\\"Action\\":\\"Update:*\\",\\"Principal\\":\\"*\\",\\"Resource\\":\\"*\\"},{\\"Effect\\":\\"Deny\\",\\"Action\\":\\"Update:Replace\\",\\"Principal\\":\\"*\\",\\"Resource\\":\\"*\\"}]}"},"physicalResourceId":{"id":"policy-second-stack"}}",
       },
       "Type": "Custom::AWS",
       "UpdateReplacePolicy": "Delete",
