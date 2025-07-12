@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`BaseStack generate the correct cloudformation 1`] = `
+exports[`BaseStack > generate the correct cloudformation 1`] = `
 {
   "Parameters": {
     "BootstrapVersion": {
