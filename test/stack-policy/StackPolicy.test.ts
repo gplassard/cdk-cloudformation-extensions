@@ -1,6 +1,6 @@
-import { describe, expect, it} from 'vitest';
 import { App, Stack } from 'aws-cdk-lib';
 import { Template } from 'aws-cdk-lib/assertions';
+import { describe, expect, it } from 'vitest';
 import { StackPolicy } from '../../src';
 
 describe('StackPolicy', () => {
