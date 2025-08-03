@@ -1,6 +1,6 @@
-import { describe, expect, it} from 'vitest';
 import { App } from 'aws-cdk-lib';
 import { Template } from 'aws-cdk-lib/assertions';
+import { describe, expect, it } from 'vitest';
 import { StackPoliciesStack, BaseStack } from '../../src';
 import { testTags } from '../tags/Tags';
 
