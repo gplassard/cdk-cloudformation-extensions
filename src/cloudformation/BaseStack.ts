@@ -1,5 +1,4 @@
-import { Stack, Tags } from 'aws-cdk-lib';
-import { StackProps } from 'aws-cdk-lib/core/lib/stack';
+import { Stack, Tags, StackProps } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import { AdditionalTags, AwsTags } from '../tags';
 
