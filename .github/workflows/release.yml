@@ -40,12 +40,12 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
       - name: Setup pnpm
         id: setup_pnpm
-        uses: pnpm/action-setup@v5
+        uses: pnpm/action-setup@v6.0.10
         with:
-          version: 12.2.1
+          version: 12.8.2
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
         with:
-          node-version: 24.20.0
+          node-version: 26.10.0
           registry-url: https://npm.pkg.github.com
           cache: pnpm
       - name: Install dependencies
@@ -54,12 +54,12 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Configure Datadog Test Optimization
-        uses: datadog/test-visibility-github-action@d7e3562370d3742851764531da3cb54a743ebd63
+        uses: datadog/test-visibility-github-action@1abae93083b69778facd7ee11f89184306c999e6
         with:
           languages: js
           api_key: ${{secrets.DD_API_KEY}}
           site: datadoghq.eu
-          js-tracer-version: 6.13.0
+          js-tracer-version: 6.19.0
       - name: build
         run: pnpm exec projen build:ci
       - name: release
@@ -105,7 +105,7 @@ jobs:
     steps:
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
         with:
-          node-version: 24.20.0
+          node-version: 26.10.0
           package-manager-cache: false
       - name: Download build artifacts
         id: download_build_artifacts
@@ -122,6 +122,8 @@ jobs:
         id: release
         if: ${{ !inputs.dry_run }}
         env:
+          RELEASE_TAG_FILE: dist/releasetag.txt
+          CHANGELOG_FILE: dist/changelog.md
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: errout=$(mktemp); gh release create $(cat build-artifact/releasetag.txt) -R $GITHUB_REPOSITORY -F build-artifact/changelog.md -t $(cat build-artifact/releasetag.txt) --target $GITHUB_SHA 2> $errout && true; exitcode=$?; if [ $exitcode -ne 0 ] && ! grep -q "Release.tag_name already exists" $errout; then cat $errout; exit $exitcode; fi
   release_npm:
@@ -135,7 +137,7 @@ jobs:
     steps:
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
         with:
-          node-version: 24.20.0
+          node-version: 26.10.0
           package-manager-cache: false
       - name: Download build artifacts
         id: download_build_artifacts
